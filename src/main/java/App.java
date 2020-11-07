@@ -1,15 +1,17 @@
+import java.io.Console;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+        Console myConsole = System.console();
 
+        System.out.println("Enter the string to be transformed: ");
+        String stringToTransform = myConsole.readLine();
+        System.out.println("Transformed string is: ");
+        System.out.println(transformString(stringToTransform));
     }
 
-    public static  String transformString(String stringToTransform) {
+    private static  String transformString(String stringToTransform) {
         // split the string at intervals of 4, instantiate each splitString in a StringBuilder then reverse and add it to finalTransformedString
         String finalTransformedString = "";
         for (int i = 0; i < stringToTransform.length(); i += 4) {
